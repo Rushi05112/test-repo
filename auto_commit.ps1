@@ -2,7 +2,7 @@
 $timestamp = Get-Date -Format "yyyyMMdd_HHmmss"
 
 # File name
-$filename = 'auto_$timestamp.txt'
+$filename = "auto_" + $timestamp + ".txt"
 
 # Create file with content
 "This is auto commit at $timestamp" | Out-File $filename
