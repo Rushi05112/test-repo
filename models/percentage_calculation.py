@@ -5,7 +5,7 @@ logger = logging.getLogger("Uknitee-py")
 
 def Model_Object_Function(Input_Data: pd.DataFrame, **kwargs) -> pd.DataFrame:
     """
-    Percentage between two tags
+    percentage between two tags
     """
     logger.info("Starting model execution")
 
@@ -17,7 +17,7 @@ def Model_Object_Function(Input_Data: pd.DataFrame, **kwargs) -> pd.DataFrame:
         raise ValueError(f"Input_Data is missing the following columns: {missingInputs}")
 
     df = Input_Data.copy()
-    df["PERCENTAGE"] = (df["114HC066.PV"] / df["114F036C.PV"]) * 100
+    df["PERCENTAGE"] = (df["114HC066.PV"]/df["114F036C.PV"]) * 100
 
     logger.info("Model execution completed successfully")
     return df[outputCols]
